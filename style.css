@@ -276,14 +276,15 @@ main {
     .header {
         width: 100%;
     }
-    .calculator .value {
+    .standard-calculator .calculator .value {
         width: 96%;
     }
-    .calculator span {
+    .standard-calculator .calculator span {
         width: 50px;
         height: 50px;
     }
-    .calculator span::before {
+    .standard-calculator .calculator span::before,
+    .scientific-calculator .calculator span::before {
         content: '';
         position: absolute;
         top: 2px;
@@ -291,34 +292,78 @@ main {
         bottom: 8px;
         right: 8px;
     }
-    .calculator .plus {
+    .standard-calculator .calculator .plus {
         height: 115px;
     }
-    .calculator span i {
+    .standard-calculator .calculator span i,
+    .scientific-calculator .calculator span i {
         font-size: 1em;
+    }
+    .scientific-calculator .calculator span {
+        width: 70px;
+        height: 45px;
+        margin: 5px;
+    }
+    .scientific-calculator .calculator .input {
+        width: 96%;
+    }
+    .scientific-calculator .container {
+        min-width: 410px;
     }
 }
 
 @media screen and (max-width: 380px) {
-    .calculator .value {
+    .standard-calculator .calculator .value,
+    .scientific-calculator .calculator .input {
         height: 80px;
     }
     .menu i {
         font-size: 1em;
     }
+    .scientific-calculator .container {
+        min-width: 340px;
+    }
+    .scientific-calculator .calculator .input {
+        width: 99%;
+    }
+    .scientific-calculator .calculator span {
+        width: 60px;
+        height: 40px;
+        margin: 5px;
+    }
+    .scientific-calculator .calculator span::before {
+        top: 1px;
+        left: 2px;
+        bottom: 6px;
+        right: 6px;
+    }
 }
 
 @media screen and (max-width: 330px) {
-    .calculator .value {
+    .standard-calculator .calculator .value {
         width: 96%;
     }
     .menu i {
         font-size: 1em;
     }
-    .calculator span {
+    .standard-calculator .calculator span {
         margin: 3px;
     }
-    .calculator .plus {
+    .standard-calculator .calculator .plus {
         height: 106px;
+    }
+    .scientific-calculator .container {
+        min-width: 300px;
+    }
+    .scientific-calculator .calculator span {
+        width: 50px;
+        height: 30px;
+        margin: 5px;
+    }
+    .scientific-calculator .calculator span::before {
+        top: .5px;
+        left: 1px;
+        bottom: 3px;
+        right: 3px;
     }
 }
