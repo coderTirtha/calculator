@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/f9c9f5cd0c.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <header class="header">
+        <div class="user-menu">
+            <ul>
+                <li id="standard">Standard Calculator</li>
+                <li id="scientific">Scientific Calculator</li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="landing">
+            <h1>Choose your calculator from the Menu<br>😀😀😀😀😀😀</h1>
+        </section>
+        <section class="standard-calculator">
+            <div class="container">
+                <form action="" class="calculator" name="calc">
+                    <input type="text" class="value" readonly name="txt">
+                    <span class="num clear" onclick="calc.txt.value = ''"><i>C</i></span>
+                    <span class="num clear" onclick="calc.txt.value = calc.txt.value.substring(0, calc.txt.value.length - 1)"><i>Del</i></span>
+                    <span class="num" onclick="calc.txt.value+='/'"><i>/</i></span>
+                    <span class="num" onclick="calc.txt.value+='*'"><i>*</i></span>
+                    <span class="num" onclick="calc.txt.value+='7'"><i>7</i></span>
+                    <span class="num" onclick="calc.txt.value+='8'"><i>8</i></span>
+                    <span class="num" onclick="calc.txt.value+='9'"><i>9</i></span>
+                    <span class="num" onclick="calc.txt.value+='-'"><i>-</i></span>
+                    <span class="num" onclick="calc.txt.value+='4'"><i>4</i></span>
+                    <span class="num" onclick="calc.txt.value+='5'"><i>5</i></span>
+                    <span class="num" onclick="calc.txt.value+='6'"><i>6</i></span>
+                    <span class="num plus" onclick="calc.txt.value+='+'"><i>+</i></span>
+                    <span class="num" onclick="calc.txt.value+='1'"><i>1</i></span>
+                    <span class="num" onclick="calc.txt.value+='2'"><i>2</i></span>
+                    <span class="num" onclick="calc.txt.value+='3'"><i>3</i></span>
+                    <span class="num" onclick="calc.txt.value+='0'"><i>0</i></span>
+                    <span class="num" onclick="calc.txt.value+='00'"><i>00</i></span>
+                    <span class="num" onclick="calc.txt.value+='.'"><i>.</i></span>
+                    <span class="num equal" onclick="document.calc.txt.value = eval(calc.txt.value)"><i>=</i></span>
+                </form>
+            </div>
+        </section>
+
+        <section class="scientific-calculator">
+            <div class="container">
+                <form class="calculator" name="calculate">
+                    <input type="text" class="input" readonly name="input">
+                    <span class="number" onclick=""><i>(</i></span>
+                    <span class="number" onclick=""><i>)</i></span>
+                    <span onclick="sin()"><i>sin</i></span>
+                    <span onclick="cos()"><i>cos</i></span>
+                    <span onclick="tan()"><i>tan</i></span>
+                    <span onclick="log()"><i>log</i></span>
+                    <span onclick="e()"><i>e</i></span>
+                    <span onclick="square()"><i>x<sup>2</sup></i></span>
+                    <span onclick="qube()"><i>x<sup>3</sup></i></span>
+                    <span onclick="nverse()"><i>x<sup>-1</sup></i></span>
+                    <span onclick="sqrt()"><i>&radic;</i></span>
+                    <span onclick="qbrt()"><i>&#8731;</i></span>
+                    <span onclick="pi()"><i>π</i></span>
+                    <span onclick="abs()"><i>abs</i></span>
+                    <span class="clear" onclick="backspc()"><i>DEL</i></span>
+                    <span class="clear" onclick="ac()"><i>AC</i></span>
+                    <span class="number" onclick=""><i>7</i></span>
+                    <span class="number" onclick=""><i>8</i></span>
+                    <span class="number" onclick=""><i>9</i></span>
+                    <span class="number" onclick=""><i>*</i></span>
+                    <span class="number" onclick=""><i>4</i></span>
+                    <span class="number" onclick=""><i>5</i></span>
+                    <span class="number" onclick=""><i>6</i></span>
+                    <span class="number" onclick=""><i>/</i></span>
+                    <span class="number" onclick=""><i>1</i></span>
+                    <span class="number" onclick=""><i>2</i></span>
+                    <span class="number" onclick=""><i>3</i></span>
+                    <span class="number" onclick=""><i>-</i></span>
+                    <span class="number" onclick=""><i>0</i></span>
+                    <span class="number" onclick=""><i>.</i></span>
+                    <span class="equal" onclick="equal()"><i>=</i></span>
+                    <span class="number" onclick=""><i>+</i></span>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="scientific.js"></script>
+</body>
+
+</html>

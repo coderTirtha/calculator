@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    transition: all .2s linear;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    background: #333;
+}
+
+.header {
+    position: fixed;
+    top: .2rem;
+    left: -30rem;
+    z-index: 5;
+    height: 11rem;
+    width: 30rem;
+    background: #1a1a1a;
+    border-radius: 1rem;
+}
+
+.menu {
+    background: #333;
+    color: #fff;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    top: 1rem;
+    right: .8rem;
+    z-index: 10;
+    padding: .7rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.menu i {
+    font-size: 1.5em;
+}
+
+.header .user-menu {
+    width: 100%;
+}
+
+.header .user-menu ul {
+    list-style-type: none;
+    padding: 1rem 0.1rem;
+    margin: 1rem;
+}
+
+.header .user-menu ul li {
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    border: 2px solid rgba(77, 77, 77, 0.24);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header .user-menu ul li:hover {
+    box-shadow: 5px 5px 15px rgba(26, 26, 26, 0.25), 5px 5px 15px rgba(56, 56, 56, 0.25), inset -1px -1px 15px rgba(0, 0, 0, 0.5), inset 1px 1px 15px rgba(0, 0, 0, 0.5);
+}
+
+.header.active {
+    left: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: consolas;
+    min-height: 80vh;
+    margin: 2rem;
+}
+
+.standard-calculator {
+    display: none;
+}
+
+.scientific-calculator {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.landing {
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+    display: block;
+}
+
+.inactive {
+    display: none;
+}
+
+.standard-calculator .container {
+    min-width: 300px;
+    min-height: 400px;
+    background: #333;
+    padding: 40px 30px 30px;
+    border-radius: 20px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25), 10px 10px 70px rgba(0, 0, 0, 0.25), inset -5px -5px 15px rgba(0, 0, 0, 0.5), inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.calculator {
+    position: relative;
+    display: grid;
+}
+
+.calculator .value {
+    position: relative;
+    grid-column: span 4;
+    height: 100px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #a7af7c;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
+    text-align: right;
+    padding: 10px;
+    font-size: 2em;
+}
+
+.standard-calculator .calculator span {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 8px;
+    background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15), inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75), 10px 20px 25px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    user-select: none;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 10px;
+}
+
+.standard-calculator .calculator span::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    bottom: 14px;
+    right: 12px;
+    background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
+    border-radius: 10px;
+    box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1), 10px 5px 10px rgba(0, 0, 0, 0.15);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+}
+
+.standard-calculator .calculator span:active {
+    filter: brightness(1.5);
+}
+
+.standard-calculator .calculator span i {
+    position: relative;
+    font-style: normal;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.standard-calculator .calculator .clear,
+.scientific-calculator .calculator .clear {
+    background: #f00;
+}
+
+.standard-calculator .calculator .clear::before,
+.scientific-calculator .calculator .clear::before {
+    background: linear-gradient(90deg, #d20000, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
+}
+
+.standard-calculator .calculator .plus {
+    grid-row: span 2;
+    height: 175px;
+}
+
+.standard-calculator .calculator .equal,
+.scientific-calculator .calculator .equal {
+    background: #2196f3;
+}
+
+.standard-calculator .calculator .equal::before,
+.scientific-calculator .calculator .equal::before {
+    background: linear-gradient(90deg, #1479c9, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
+}
+
+
+/*Scientific Calculator styles starts here*/
+
+.scientific-calculator .container {
+    min-width: 550px;
+    min-height: 400px;
+    background: #333;
+    padding: 40px 30px 30px;
+    border-radius: 20px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25), 10px 10px 70px rgba(0, 0, 0, 0.25), inset -5px -5px 15px rgba(0, 0, 0, 0.5), inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.scientific-calculator .calculator span {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 110px;
+    height: 60px;
+    margin: 8px;
+    background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15), inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75), 10px 20px 25px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    user-select: none;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 10px;
+}
+
+.scientific-calculator .calculator span::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    bottom: 12px;
+    right: 10px;
+    background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
+    border-radius: 10px;
+    box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1), 10px 5px 10px rgba(0, 0, 0, 0.15);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+}
+
+.scientific-calculator .calculator span i {
+    position: relative;
+    font-style: normal;
+    font-size: 1.5em;
+}
+
+.scientific-calculator .calculator span:active {
+    filter: brightness(1.5);
+}
+
+.scientific-calculator .calculator .input {
+    position: relative;
+    grid-column: span 4;
+    height: 100px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #a7af7c;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
+    text-align: right;
+    padding: 10px;
+    font-size: 2em;
+}
+
+@media screen and (max-width: 450px) {
+    .header {
+        width: 100%;
+    }
+    .calculator .value {
+        width: 96%;
+    }
+    .calculator span {
+        width: 50px;
+        height: 50px;
+    }
+    .calculator span::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 3px;
+        bottom: 8px;
+        right: 8px;
+    }
+    .calculator .plus {
+        height: 115px;
+    }
+    .calculator span i {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .calculator .value {
+        height: 80px;
+    }
+    .menu i {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .calculator .value {
+        width: 96%;
+    }
+    .menu i {
+        font-size: 1em;
+    }
+    .calculator span {
+        margin: 3px;
+    }
+    .calculator .plus {
+        height: 106px;
+    }
+}
